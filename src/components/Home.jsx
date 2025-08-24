@@ -1,10 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar'
+import './Home.css'
+
 
 function Home (){
-
+    
     return (
         <>
-           <div>Home</div>
+            <Navbar />
+           {/* <div>Home</div> */}
         </>
     )
 }
