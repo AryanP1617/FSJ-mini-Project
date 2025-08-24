@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #F9FAFB;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFF;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+}
+
+.login-button{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    margin-left: 43px;
+}
+
+.login-button:hover{
+    background-color: rgb(101, 101, 101);
+}
+
