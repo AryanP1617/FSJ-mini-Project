@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Login from './components/login'
+import Home from './components/Home'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <div className='bg-[#EBFFEB] h-screen w-screen'>
-        <h1 className='text-4xl text-center'>FSJ Mini Project</h1>
-      </div>
+      <Router>
+        <Routes>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/home' element={<Home />}></Route>
+        </Routes>
+      </Router>
     </>
   )
 }
