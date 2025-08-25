@@ -16,13 +16,13 @@ function Landing() {
                     <div className="flex gap-4">
                         <button 
                             onClick={() => navigate('/login')}
-                            className="px-4 py-2 text-indigo-600 hover:text-indigo-800 transition-colors"
+                            className="px-4 py-2 bg-amber-200 rounded-lg hover:bg-amber-300 text-black hover:text-indigo-800 cursor-pointer transition-colors"
                         >
                             Login
                         </button>
                         <button 
                             onClick={() => navigate('/signup')}
-                            className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                            className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 cursor-pointer transition-colors"
                         >
                             Sign Up
                         </button>
@@ -31,7 +31,7 @@ function Landing() {
 
 
                 <div className="flex-1 flex items-center justify-center">
-                    <div className="max-w-5xl text-center grid grid-cols-2 my-5">
+                    <div className="max-w-5xl text-center grid grid-cols-2 my-10">
                         <div className="my-15 mr-15">
                             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                             Your Academic Journey,
@@ -45,20 +45,14 @@ function Landing() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button 
                                 onClick={() => navigate('/signup')}
-                                className="px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                                className="px-8 py-4 bg-indigo-600 text-white text-lg cursor-pointer font-semibold rounded-lg hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
                             >
                                 Get Started
-                            </button>
-                            <button 
-                                onClick={() => navigate('/demo')}
-                                className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 text-lg font-semibold rounded-lg hover:bg-indigo-600 hover:text-white transition-all duration-200"
-                            >
-                                View Demo
                             </button>
                         </div>
                         </div>
 
-                        <div>
+                        <div className="transform hover:scale-101 shadow-lg duration-200 transition-all shadow-black rounded-3xl">
                             <img className="rounded-3xl"
                             src="https://i.pinimg.com/736x/a4/c6/1b/a4c61bb2fcd735f198bd67144c0c2864.jpg" alt="" />
                         </div>
@@ -68,35 +62,35 @@ function Landing() {
 
 
 
-                <div className="bg-white py-16">
+                <div className="bg-indigo-600 py-16">
                     <div className="max-w-6xl mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                            Everything you need to excel academically
+                        <h2 className="text-3xl font-bold text-center text-amber-200 mb-12">
+                            Everything you need to excel academically!
                         </h2>
                         
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center p-6">
                                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">📊</span>
+                                    <span className="text-3xl">🗓️</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-3">Attendance Tracking</h3>
-                                <p className="text-gray-600">Never miss a class. Track your attendance across all subjects and get alerts for low attendance.</p>
+                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Attendance Tracking</h3>
+                                <p className="text-white">Never miss a class. Track your attendance across all subjects and get alerts for low attendance.</p>
                             </div>
 
                             <div className="text-center p-6">
                                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">📚</span>
+                                    <span className="text-3xl">📚</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-3">Assignment Manager</h3>
-                                <p className="text-gray-600">Keep track of all your assignments, deadlines, and submissions in one organized place.</p>
+                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Assignment Manager</h3>
+                                <p className="text-white">Keep track of all your assignments, deadlines, and submissions in one organized place.</p>
                             </div>
 
                             <div className="text-center p-6">
                                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">🎯</span>
+                                    <span className="text-3xl">🎯</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-3">Grade Monitoring</h3>
-                                <p className="text-gray-600">Monitor your academic progress with detailed grade tracking and performance analytics.</p>
+                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Grade Monitoring</h3>
+                                <p className="text-white">Monitor your academic progress with detailed grade tracking and performance analytics.</p>
                             </div>
                         </div>
                     </div>
@@ -104,7 +98,7 @@ function Landing() {
 
 
 
-                <div className="bg-indigo-600 py-16">
+                {/* <div className="bg-indigo-600 py-16">
                     <div className="max-w-4xl mx-auto text-center px-6">
                         <h2 className="text-3xl font-bold text-white mb-4">
                             Ready to transform your academic experience?
@@ -114,12 +108,12 @@ function Landing() {
                         </p>
                         <button 
                             onClick={() => navigate('/signup')}
-                            className="px-8 py-4 bg-white text-indigo-600 text-lg font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                            className="px-8 py-4 bg-white text-indigo-600 cursor-pointer text-lg font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 transition-all duration-200 shadow-lg"
                         >
                             Start Your Journey Today
                         </button>
                     </div>
-                </div>
+                </div> */}
 
 
 

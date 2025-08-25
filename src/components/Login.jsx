@@ -25,12 +25,12 @@ function Login (){
 
     return (
         <>
-            <div className="w-screen h-screen absolute flex justify-center items-center">
+            <div className="w-screen h-screen flex justify-center items-center bg-indigo-200">
                 <div className="card w-100 h-100 text-center text-4xl p-5 m-5 rounded-2xl">
                     <h1 className="text-3xl">Sign in with Email</h1>
                     <div className="text-sm p-2 mb-5">Your all-in-one hub to track, manage, and excel in your academic journey.</div>
                     <form>
-                        <div className="text-xl bg-[#C7F3E5] rounded-lg p-2 mb-5">
+                        <div className="text-xl bg-[#F9FBE7] rounded-lg p-2 mb-5">
                             <input className="outline-none"
                             type="email"
                             name="email"
@@ -39,7 +39,7 @@ function Login (){
                             placeholder="Email"
                             />
                         </div>
-                        <div className="text-xl bg-[#C7F3E5] rounded-lg p-2 mb-10">
+                        <div className="text-xl bg-[#F9FBE7] rounded-lg p-2 mb-10">
                             <input className="outline-none"
                             type="password"
                             name="password"
@@ -57,6 +57,7 @@ function Login (){
                         </div>
                     </form>
                 </div>
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-illustration-svg-png-download-6430849.png" alt="" />
             </div>
         </>
     )
