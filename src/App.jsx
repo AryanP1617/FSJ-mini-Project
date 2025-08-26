@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Landing from './components/Landing'
 import Login from './components/Login'
 import Home from './components/Home'
 import Attendance from './components/Attendance'
