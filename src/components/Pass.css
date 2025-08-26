@@ -1,29 +1,88 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body, html {
-    height: 100%;
-    background-color: #F9FAFB;
+  height: 100%;
+  font-family: Arial, sans-serif;  
+  overflow-x: hidden;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFF;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #c7d2fe;
+  
 }
 
-.login-button{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    margin-left: 43px;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px;
+  text-align: center;
+  max-width: 400px;
 }
 
-.login-button:hover{
-    background-color: rgb(101, 101, 101);
+.title {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.input-box {
+  background-color: #f9fbe7;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-button button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.login-button button:hover {
+  background-color: rgb(101, 101, 101);
+}
+
+.side-image {
+  max-width: 400px;
+  gap: 30px;
+}

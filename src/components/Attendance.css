@@ -4,11 +4,19 @@ body,html{
     
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:15px;    
+}
+
 .attendance-wrapper{
     display: flex;
     flex-direction: column;
     background-color: #FFFF;
-    margin:50px;
+    margin:50px 0px;
     border-radius:10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     overflow: hidden;
