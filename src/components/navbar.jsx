@@ -10,9 +10,11 @@ function Navbar(){
         <>
            <nav className="navbar">
 
-                <div className="logo">Student Dashboard</div>
+                <div className="logo">
+                    <Link to="/home">Student Dashboard</Link>
+                </div>
                 <ul className="links">
-                    <li><Link to="/home">Attendance</Link></li>
+                    <li><Link to="/attendance">Attendance</Link></li>
                     <li><Link to="/assignments">Assignments</Link></li>
                 </ul>
            </nav>
