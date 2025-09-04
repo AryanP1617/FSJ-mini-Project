@@ -1,131 +1,123 @@
 import React from "react";
-import "./Landing.css"
-import { useNavigate } from "react-router-dom";
+import "./Landing.css";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 function Landing() {
+    const navigate=useNavigate();
+    const handleLogin = () => {
+        // Navigate to login page
+        
+        navigate('/login')
+    };
 
-    const navigate = useNavigate()
+    const handleSignup = () => {
+        // Navigate to signup page
+        console.log('Navigate to signup');
+    };
 
     return (
-        <>
-        <div className="hero min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-                <nav className="flex justify-between items-center p-6 bg-white shadow-sm">
-                    <div className="text-2xl font-bold text-indigo-600">
-                        StudySync
-                    </div>
-                    <div className="flex gap-4">
-                        <button 
-                            onClick={() => navigate('/login')}
-                            className="px-4 py-2 bg-amber-200 rounded-lg hover:bg-amber-300 text-black hover:text-indigo-800 cursor-pointer transition-colors"
-                        >
-                            Login
-                        </button>
-                        <button 
-                            onClick={() => navigate('/signup')}
-                            className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 cursor-pointer transition-colors"
-                        >
-                            Sign Up
-                        </button>
-                    </div>
-                </nav>
+        <div className="hero">
+            <nav className="nav">
+                <div className="nav-logo">
+                    StudySync
+                </div>
+                <div className="nav-buttons">
+                    <button 
+                        onClick={handleLogin}
+                        className="btn btn-login"
+                    >
+                        Login
+                    </button>
+                    <button 
+                        onClick={handleSignup}
+                        className="btn btn-signup"
+                    >
+                        Sign Up
+                    </button>
+                </div>
+            </nav>
 
-
-                <div className="flex-1 flex items-center justify-center">
-                    <div className="max-w-5xl text-center grid grid-cols-2 my-10">
-                        <div className="my-15 mr-15">
-                            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <div className="main-content">
+                <div className="content-container">
+                    <div className="text-content">
+                        <h1 className="main-title">
                             Your Academic Journey,
-                            <span className="text-indigo-600"> Simplified</span>
+                            <span className="title-highlight"> Simplified</span>
                         </h1>
                         
-                        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                        <p className="main-description">
                             Track attendance, manage assignments, monitor grades, and stay on top of your academic life with our all-in-one student dashboard.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div className="cta-section">
                             <button 
-                                onClick={() => navigate('/signup')}
-                                className="px-8 py-4 bg-indigo-600 text-white text-lg cursor-pointer font-semibold rounded-lg hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                                onClick={handleSignup}
+                                className="btn btn-get-started"
                             >
                                 Get Started
                             </button>
                         </div>
-                        </div>
+                    </div>
 
-                        <div className="transform hover:scale-101 shadow-lg duration-200 transition-all shadow-black rounded-3xl">
-                            <img className="rounded-3xl"
-                            src="https://i.pinimg.com/736x/a4/c6/1b/a4c61bb2fcd735f198bd67144c0c2864.jpg" alt="" />
-                        </div>
-
+                    <div className="image-content">
+                        <img 
+                            className="hero-image"
+                            src="https://i.pinimg.com/736x/a4/c6/1b/a4c61bb2fcd735f198bd67144c0c2864.jpg" 
+                            alt="StudySync Dashboard Preview" 
+                        />
                     </div>
                 </div>
-
-
-
-                <div className="bg-indigo-600 py-16">
-                    <div className="max-w-6xl mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center text-amber-200 mb-12">
-                            Everything you need to excel academically!
-                        </h2>
-                        
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-3xl">🗓️</span>
-                                </div>
-                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Attendance Tracking</h3>
-                                <p className="text-white">Never miss a class. Track your attendance across all subjects and get alerts for low attendance.</p>
-                            </div>
-
-                            <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-3xl">📚</span>
-                                </div>
-                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Assignment Manager</h3>
-                                <p className="text-white">Keep track of all your assignments, deadlines, and submissions in one organized place.</p>
-                            </div>
-
-                            <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-3xl">🎯</span>
-                                </div>
-                                <h3 className="text-xl text-amber-100 font-semibold mb-3">Grade Monitoring</h3>
-                                <p className="text-white">Monitor your academic progress with detailed grade tracking and performance analytics.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {/* <div className="bg-indigo-600 py-16">
-                    <div className="max-w-4xl mx-auto text-center px-6">
-                        <h2 className="text-3xl font-bold text-white mb-4">
-                            Ready to transform your academic experience?
-                        </h2>
-                        <p className="text-indigo-100 text-lg mb-8">
-                            Join thousands of students who are already using StudySync to excel in their studies.
-                        </p>
-                        <button 
-                            onClick={() => navigate('/signup')}
-                            className="px-8 py-4 bg-white text-indigo-600 cursor-pointer text-lg font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 transition-all duration-200 shadow-lg"
-                        >
-                            Start Your Journey Today
-                        </button>
-                    </div>
-                </div> */}
-
-
-
-                <footer className="bg-gray-900 text-white py-8">
-                    <div className="max-w-6xl mx-auto px-6 text-center">
-                        <div className="text-xl font-bold mb-4">StudySync</div>
-                        <p className="text-gray-400">© 2025 StudySync. All rights reserved.</p>
-                    </div>
-                </footer>
             </div>
-        </>
-    )
+
+            <div className="features-section">
+                <div className="features-container">
+                    <h2 className="features-title">
+                        Everything you need to excel academically!
+                    </h2>
+                    
+                    <div className="features-grid">
+                        <div className="feature-card">
+                            <div className="feature-icon">
+                                <span>🗓️</span>
+                            </div>
+                            <h3 className="feature-title">Attendance Tracking</h3>
+                            <p className="feature-description">
+                                Never miss a class. Track your attendance across all subjects and get alerts for low attendance.
+                            </p>
+                        </div>
+
+                        <div className="feature-card">
+                            <div className="feature-icon">
+                                <span>📚</span>
+                            </div>
+                            <h3 className="feature-title">Assignment Manager</h3>
+                            <p className="feature-description">
+                                Keep track of all your assignments, deadlines, and submissions in one organized place.
+                            </p>
+                        </div>
+
+                        <div className="feature-card">
+                            <div className="feature-icon">
+                                <span>🎯</span>
+                            </div>
+                            <h3 className="feature-title">Grade Monitoring</h3>
+                            <p className="feature-description">
+                                Monitor your academic progress with detailed grade tracking and performance analytics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer className="footer">
+                <div className="footer-content">
+                    <div className="footer-logo">StudySync</div>
+                    <p className="footer-text">© 2025 StudySync. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    );
 }
 
-export default Landing
+export default Landing;

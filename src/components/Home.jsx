@@ -10,7 +10,14 @@ function Home (){
     return (
         <>
             <Navbar />
-            <Task />
+            <div className="components">
+                <div className="utilities">
+                <Task />
+                <div className="attendance"></div>
+                </div>
+                <div className="heatmap">heatmap</div>
+            </div>
+            
            {/* <div>Home</div> */}
         </>
     )

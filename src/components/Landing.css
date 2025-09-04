@@ -1,11 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .hero {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+    display: flex;
+    flex-direction: column;
 }
 
-html {
-    scroll-behavior: smooth;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-login {
+    background-color: #fde68a;
+    color: black;
+}
+
+.btn-login:hover {
+    background-color: #fcd34d;
+    color: #4338ca;
+}
+
+.btn-signup {
+    background-color: #6366f1;
+    color: white;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-signup:hover {
+    background-color: #4f46e5;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.content-container {
+    max-width: 80rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.text-content {
+    text-align: center;
+    
+}
+
+.main-title {
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.title-highlight {
+    color: #4f46e5;
+}
+
+.main-description {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-section {
+    display: flex;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    justify-content: center;
+}
+
+.btn-get-started {
+    padding: 1rem 2rem;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-get-started:hover {
+    background-color: #4338ca;
+    transform: scale(1.05);
+}
+
+.image-content {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.01);
+}
+
+/* Features Section */
+.features-section {
+    background-color: #4f46e5;
+    padding: 4rem 0;
+}
+
+.features-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.features-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fde68a;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: #e0e7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+
+.feature-icon span {
+    font-size: 1.875rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    color: #fef3c7;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    color: white;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #111827;
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    color: #9ca3af;
+}
+
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -15,16 +238,4 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.hero h1 {
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.hero p {
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero .flex {
-    animation: fadeInUp 0.8s ease-out 0.4s both;
 }

@@ -31,6 +31,11 @@ function Attendance(){
         return "white"
     }
 
+    const getColor=(subject)=>{
+        if(attendance[subject]==="absent") return "#ffffff"
+        return "black"
+    }
+
     return(
     <>
     <Navbar />
@@ -56,7 +61,7 @@ function Attendance(){
                     className="subject-wrapper" 
                     style={{backgroundColor: getBackgroundColor(subject)}}
                 >
-                    <div className="subject-name">{subject}</div>
+                    <div className="subject-name" style={{color:getColor(subject)}}>{subject}</div>
                     <button
                         className="present" 
                         onClick={() => handleAttendance(subject, "present")}

@@ -4,3 +4,17 @@ body{
     height:100%;
     background-color: #F4F6F9;
 }
+
+.components{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.utilities
+{
+    display: flex;
+    flex-direction: row;
+    margin-left:2em;
+
+}
