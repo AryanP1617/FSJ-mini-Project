@@ -82,3 +82,30 @@ button{
 .absent:active{
     background-color: rgb(213, 32, 32);
 }
+
+.day-list {
+    margin: 0px 100px 0px 100px;
+}
+
+.outer-day-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+.list-item {
+    background-color: lightgray;
+}
+
+.list-item:hover {
+    background-color: gray;
+}
+
+.list-item:active {
+    background-color: gray;
+}

@@ -15,7 +15,6 @@ function Navbar(){
                 </div>
                 <ul className="links">
                     <li><Link to="/attendance">Attendance</Link></li>
-                    <li><Link to="/assignments">Assignments</Link></li>
                 </ul>
            </nav>
         </>

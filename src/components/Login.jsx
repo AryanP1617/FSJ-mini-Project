@@ -1,9 +1,22 @@
 import React from "react";
 import "./Pass.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+
+  const navigate = useNavigate()
+
+  const handleError = () => {
+        const message = document.getElementById("error-message")
+        message.innerText = "You have entered wrong login credentials!"
+        message.style.color = "red"
+      }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const userEmail = "aryan@gmail.com"
+    const userPassword = "123456"
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -15,6 +28,13 @@ function Login() {
     if (!password) {
       alert("Please enter your Password!");
       return;
+    }
+
+    if(email === userEmail && password === userPassword) {
+      navigate("/attendance")
+    }
+    else if(email !== userEmail && password !== userPassword){
+      handleError()
     }
 
     
@@ -40,6 +60,7 @@ function Login() {
               required
             />
           </div>
+          <div id="error-message"></div>
           <div className="login-button">
             <button type="submit">Login</button>
           </div>

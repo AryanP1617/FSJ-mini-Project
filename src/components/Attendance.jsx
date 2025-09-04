@@ -6,53 +6,71 @@ import Checklist from "./Checklist";
 
 function Attendance(){
 
-    const [subjectStatus, setSubjectStatus] = useState({
-        DSGT: "white",
-        EVS: "white", 
-        EM: "white",
-        AOA: "white"
-    })
+    const [day, setDay] = useState("Monday")
+    
+    const subjects = {
+        Monday: ["AOA", "DSGT", "COA", "EVS"],
+        Tuesday: ["MATHS", "DSGT", "ED", "AOA"],
+        Wednesday: ["OSTL", "FSJP", "COA", "ED"],
+        Thursday: ["COA", "FSJP", "AOA", "OSTL"],
+        Friday: ["EVS", "MATHS", "DSGT", "FSJP"]
+    }
 
-    const handleSubmitPresent = (subject) => {
-        setSubjectStatus(prev => ({
+    const [attendance, setAttendance] = useState({})
+
+    const handleAttendance = (subject, status) => {
+        setAttendance(prev => ({
             ...prev,
-            [subject]: "#98ad97"
+            [subject]: status
         }))
     }
 
-    const handleSubmitAbsent = (subject) => {
-        setSubjectStatus(prev => ({
-            ...prev,
-            [subject]: "#d52020"
-        }))
+    const getBackgroundColor = (subject) => {
+        if (attendance[subject] === "present") return "#98ad97"
+        if (attendance[subject] === "absent") return "#d52020"
+        return "white"
     }
 
     return(
     <>
     <Navbar />
+    <div className="day-list">
+        <ul className="outer-day-list">
+            {Object.keys(subjects).map(dayName => (
+                <button 
+                    key={dayName}
+                    className={`list-item ${day === dayName ? 'active' : ''}`}
+                    onClick={() => setDay(dayName)}
+                >
+                    {dayName}
+                </button>
+            ))}
+        </ul>
+    </div>
     <div className="wrapper">
         <Checklist />
         <div className="attendance-wrapper">
-            <div className="subject-wrapper" style={{backgroundColor: subjectStatus.DSGT}}>
-                <div className="subject-name">DSGT</div>
-                <button className="present" onClick={() => handleSubmitPresent("DSGT")}>Present</button>
-                <button className="absent" onClick={() => handleSubmitAbsent("DSGT")}>Absent</button>
-            </div>
-            <div className="subject-wrapper" style={{backgroundColor: subjectStatus.EVS}}>
-                <div className="subject-name">EVS</div>
-                <button className="present" onClick={() => handleSubmitPresent("EVS")}>Present</button>
-                <button className="absent" onClick={() => handleSubmitAbsent("EVS")}>Absent</button>
-            </div>
-            <div className="subject-wrapper" style={{backgroundColor: subjectStatus.EM}}>
-                <div className="subject-name">EM</div>  
-                <button className="present" onClick={() => handleSubmitPresent("EM")}>Present</button>
-                <button className="absent" onClick={() => handleSubmitAbsent("EM")}>Absent</button>
-            </div>
-            <div className="subject-wrapper" style={{backgroundColor: subjectStatus.AOA}}>
-                <div className="subject-name">AOA</div>
-                <button className="present" onClick={() => handleSubmitPresent("AOA")}>Present</button>
-                <button className="absent" onClick={() => handleSubmitAbsent("AOA")}>Absent</button>
-            </div>
+            {subjects[day].map((subject, index) => (
+                <div 
+                    key={subject}
+                    className="subject-wrapper" 
+                    style={{backgroundColor: getBackgroundColor(subject)}}
+                >
+                    <div className="subject-name">{subject}</div>
+                    <button
+                        className="present" 
+                        onClick={() => handleAttendance(subject, "present")}
+                    >
+                        Present
+                    </button>
+                    <button 
+                        className="absent" 
+                        onClick={() => handleAttendance(subject, "absent")}
+                    >
+                        Absent
+                    </button>
+                </div>
+            ))}
         </div>
     </div>
     </>
