@@ -1,0 +1,20 @@
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color: #E6F0FA;
+}
+
+.components{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.utilities
+{
+    display: flex;
+    flex-direction: row;
+    margin-left:2em;
+
+}

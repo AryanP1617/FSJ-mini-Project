@@ -1,10 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar'
+import Task from './Task'
+import './Home.css'
+
 
 function Home (){
-
+    
     return (
         <>
-           <div>Home</div>
+            <Navbar />
+            <div className="components">
+                <div className="utilities">
+                <Task />
+                <div className="attendance"></div>
+                </div>
+            </div>
+            
+           {/* <div>Home</div> */}
         </>
     )
 }
