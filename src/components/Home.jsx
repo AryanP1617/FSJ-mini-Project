@@ -15,7 +15,6 @@ function Home (){
                 <Task />
                 <div className="attendance"></div>
                 </div>
-                <div className="heatmap">heatmap</div>
             </div>
             
            {/* <div>Home</div> */}

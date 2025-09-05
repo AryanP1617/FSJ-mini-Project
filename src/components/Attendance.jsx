@@ -7,6 +7,10 @@ import Checklist from "./Checklist";
 function Attendance(){
 
     const [day, setDay] = useState("Monday")
+
+    const handleReset = () => {
+        setAttendance({})
+    }
     
     const subjects = {
         Monday: ["AOA", "DSGT", "COA", "EVS"],
@@ -45,7 +49,7 @@ function Attendance(){
                 <button 
                     key={dayName}
                     className={`list-item ${day === dayName ? 'active' : ''}`}
-                    onClick={() => setDay(dayName)}
+                    onClick={() => {setDay(dayName); handleReset();}}
                 >
                     {dayName}
                 </button>
