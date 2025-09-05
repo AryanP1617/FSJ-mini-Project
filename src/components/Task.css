@@ -4,7 +4,9 @@
     align-items: center;
     background-color: white;
     padding: 20px;
+    gap:20px;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .heading{
@@ -23,4 +25,25 @@
     border-radius: 10px;
     min-height: 400px;
     width:300px;
+}
+
+.buttons{
+    display: flex;
+    gap:4em;
+}
+.add{
+    color:white;
+    background-color: #4A90E2;
+}
+
+.add:hover{
+    background-color: #357ABD;
+}
+.delete{
+    color:white;
+    background-color: #4A90E2;
+}
+
+.delete:hover{
+    background-color: #357ABD;
 }

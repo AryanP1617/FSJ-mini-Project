@@ -33,7 +33,7 @@ function Login() {
     if(email === userEmail && password === userPassword) {
       navigate("/attendance")
     }
-    else if(email !== userEmail && password !== userPassword){
+    else if(email !== userEmail || password !== userPassword){
       handleError()
     }
 
