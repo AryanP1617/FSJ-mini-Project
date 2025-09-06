@@ -6,18 +6,18 @@ import Checklist from "./Checklist";
 
 function Attendance(){
 
-    const [day, setDay] = useState("Monday")
+    const [day, setDay] = useState("01/09/2025")
 
     const handleReset = () => {
         setAttendance({})
     }
     
     const subjects = {
-        Monday: ["AOA", "DSGT", "COA", "EVS"],
-        Tuesday: ["MATHS", "DSGT", "ED", "AOA"],
-        Wednesday: ["OSTL", "FSJP", "COA", "ED"],
-        Thursday: ["COA", "FSJP", "AOA", "OSTL"],
-        Friday: ["EVS", "MATHS", "DSGT", "FSJP"]
+        "01/09/2025": ["AOA", "DSGT", "COA", "EVS"],
+        "02/09/2025": ["MATHS", "DSGT", "ED", "AOA"],
+        "03/09/2025": ["OSTL", "FSJP", "COA", "ED"],
+        "04/09/2025": ["COA", "FSJP", "AOA", "OSTL"],
+        "05/09/2025": ["EVS", "MATHS", "DSGT", "FSJP"]
     }
 
     const [attendance, setAttendance] = useState({})

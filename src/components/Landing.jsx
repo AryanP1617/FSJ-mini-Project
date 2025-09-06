@@ -6,14 +6,13 @@ import { Navigate, useNavigate } from "react-router-dom";
 function Landing() {
     const navigate=useNavigate();
     const handleLogin = () => {
-        // Navigate to login page
+        
         
         navigate('/login')
     };
 
     const handleSignup = () => {
-        // Navigate to signup page
-        console.log('Navigate to signup');
+        navigate('/signup')
     };
 
     return (

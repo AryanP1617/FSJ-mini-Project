@@ -26,11 +26,11 @@
   padding: 8px 16px;
   border: none;
   border-radius: 6px;
-  background: #4caf50;
+  background: blue;
   color: white;
   cursor: pointer;
 }
 
 .popup-submit:hover {
-  background: #43a047;
+  background: rgb(25, 25, 187);
 }

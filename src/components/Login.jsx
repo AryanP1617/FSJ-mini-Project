@@ -31,12 +31,12 @@ function Login() {
     }
 
     if(email === userEmail && password === userPassword) {
-      navigate("/attendance")
+      navigate("/home")
     }
     else if(email !== userEmail || password !== userPassword){
       handleError()
     }
-
+    
     
   };
 

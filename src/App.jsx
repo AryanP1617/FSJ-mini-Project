@@ -3,7 +3,8 @@ import Landing from './components/Landing'
 import Login from './components/Login'
 import Home from './components/Home'
 import Attendance from './components/Attendance'
-import Navbar from './components/Navbar'
+import Signup from './components/Signup'
+
 import './App.css'
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/home' element={<Home />}></Route>
           <Route path='/attendance' element={<Attendance />}></Route>
+          <Route path='/signup' element={<Signup/>}></Route>
           
           
         </Routes>

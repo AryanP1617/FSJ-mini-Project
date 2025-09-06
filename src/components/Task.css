@@ -18,13 +18,15 @@
 
 .task-screen{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:auto 1fr;
     gap:15px;
     padding:20px;
     background-color: #E9EDF2;
     border-radius: 10px;
     min-height: 400px;
     width:300px;
+
+    
 }
 
 .buttons{
@@ -46,4 +48,15 @@
 
 .delete:hover{
     background-color: #357ABD;
+}
+
+.no-tasks{
+    
+    color:#bebebe;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 50% 0px 50% 0px;
+    
+    /* font-family: */
+        
 }
