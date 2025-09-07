@@ -8,13 +8,59 @@ body{
 .components{
     display: flex;
     flex-direction: column;
-    
+    padding: 20px;
 }
 
-.utilities
-{
+.utilities {
     display: flex;
     flex-direction: row;
-    margin-left:2em;
+    margin-left: 2em;
+    align-items: flex-start;
+    gap: 20px;
+}
 
+.welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    max-width: 1200px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.welcome-message {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .utilities {
+        flex-direction: column;
+        margin-left: 1em;
+        margin-right: 1em;
+        align-items: center;
+    }
+    
+    .welcome-section {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    .welcome-message {
+        font-size: 24px;
+    }
 }

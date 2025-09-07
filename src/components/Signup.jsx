@@ -1,31 +1,53 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from '../context/UserContext';
 import './Signup.css'
 
 function Signup(){
-    const navigate=useNavigate()
+    const navigate = useNavigate()
+    const { updateUser } = useUser()
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const fname=document.getElementById("fname").value.trim()
-        const lname=document.getElementById("lname").value.trim()
-        const email=document.getElementById("email").value.trim()
-        const password=document.getElementById("password").value.trim()
-        const branch=document.getElementById("branch").value.trim()
-        const division=document.getElementById("division").value.trim()
-        const rollnumber=Number(document.getElementById("rollnumber").value.trim())
+        const fname = document.getElementById("fname").value.trim()
+        const lname = document.getElementById("lname").value.trim()
+        const email = document.getElementById("email").value.trim()
+        const password = document.getElementById("password").value.trim()
+        const branch = document.getElementById("branch").value.trim()
+        const division = document.getElementById("division").value.trim()
+        const rollnumber = document.getElementById("rollnumber").value.trim()
 
-        if(!fname || !lname || !email || !password||!branch||!division||!rollnumber) {
+        if(!fname || !lname || !email || !password || !branch || !division || !rollnumber) {
             alert("Please fill all required fields!");
             return;
         }
-        else{
-            navigate("/home")
+
+        const userKey = `user_${email}`;
+        const existingUser = localStorage.getItem(userKey);
+        
+        if (existingUser) {
+            alert("User with this email already exists! Please login instead.");
+            return;
         }
+
+        const userData = {
+            fname,
+            lname,
+            email,
+            password,
+            branch,
+            division,
+            rollnumber
+        };
+
+        localStorage.setItem(userKey, JSON.stringify(userData));
+
+        updateUser(userData);
+        navigate("/home")
     }
     
-      return(
+    return(
         <>
         <div className="signup-container">
             <div className="signup-wrapper">
@@ -62,8 +84,7 @@ function Signup(){
                             <input type="text" id="rollnumber" placeholder="Enter roll number" required/>
                         </div>  
                     
-                        <button className="button"  type="submit">Sign up</button>
-
+                        <button className="button" type="submit">Sign up</button>
                     </form>
                 </div>
             </div>

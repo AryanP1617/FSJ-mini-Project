@@ -17,6 +17,10 @@ function Task (){
         setIsPopupOpen(false);
     }
 
+    const closePopUp = () => {
+        setIsPopupOpen(false)
+    }
+
     const toggleTask=(index)=>{         
         const updatedTasks=tasks.map((task,i)=>
             i===index?{...task,done:!task.done}:task)
@@ -56,8 +60,11 @@ function Task (){
 
 
             <Popup isOpen={isPopupOpen} onSubmit={handleSubmit}>
-                <h2>Add a new task</h2>
-                <input type="text" placeholder="Enter task name" value={newTask} onChange={(e)=>setNewTask(e.target.value)}/>
+                <div className="new-task">
+                    <h2 className="new-task-heading">Add a new task</h2>
+                    <button onClick={closePopUp}>❌</button>
+                </div>
+                <input className="task-input" type="text" placeholder="Enter task name" value={newTask} onChange={(e)=>setNewTask(e.target.value)}/>
             </Popup>
 
         </>

@@ -90,21 +90,12 @@ function Landing() {
                             <div className="feature-icon">
                                 <span>📚</span>
                             </div>
-                            <h3 className="feature-title">Assignment Manager</h3>
+                            <h3 className="feature-title">Task Manager</h3>
                             <p className="feature-description">
                                 Keep track of all your assignments, deadlines, and submissions in one organized place.
                             </p>
                         </div>
 
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <span>🎯</span>
-                            </div>
-                            <h3 className="feature-title">Grade Monitoring</h3>
-                            <p className="feature-description">
-                                Monitor your academic progress with detailed grade tracking and performance analytics.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
