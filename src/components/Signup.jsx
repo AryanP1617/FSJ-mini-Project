@@ -62,9 +62,8 @@ function Signup(){
                             <input type="text" id="rollnumber" placeholder="Enter roll number" required/>
                         </div>  
                     
-                    <div className="sign-up">
-                        <button  type="submit">Sign up</button>
-                    </div>
+                        <button className="button"  type="submit">Sign up</button>
+
                     </form>
                 </div>
             </div>
