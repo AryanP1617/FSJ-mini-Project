@@ -7,6 +7,12 @@
     gap:20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+
+}
+
+.currwrapper:hover{
+    transform: scale(1.01);
 }
 
 .heading{
@@ -80,7 +86,13 @@ ul {
 }
 .add{
     color:white;
+    height: 44px;
+    width: 72px;
     background-color: #4A90E2;
+    background-image: url("public/icons8-add-30.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
 }
 
 .add:hover{
@@ -88,6 +100,12 @@ ul {
 }
 .delete{
     color:white;
+    height: 44px;
+    width: 72px;
+    background-image: url("public/icons8-delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
     background-color: #4A90E2;
 }
 

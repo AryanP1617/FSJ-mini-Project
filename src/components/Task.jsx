@@ -49,8 +49,8 @@ function Task (){
                         )}
                 </div>
                 <div className="buttons">
-                    <button className="add" onClick={()=>setIsPopupOpen(true)}>Add</button>
-                    <button className="delete" onClick={handleDelete}>Delete</button>                    
+                    <button className="add" onClick={()=>setIsPopupOpen(true)}></button>
+                    <button className="delete" onClick={handleDelete}></button>                    
                 </div>
             </div>
 
