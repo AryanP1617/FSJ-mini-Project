@@ -16,7 +16,7 @@ function Signup(){
         const division=document.getElementById("division").value.trim()
         const rollnumber=Number(document.getElementById("rollnumber").value.trim())
 
-        if(!fname || !lname || !email || !password||!password||!branch||!division||!rollnumber) {
+        if(!fname || !lname || !email || !password||!branch||!division||!rollnumber) {
             alert("Please fill all required fields!");
             return;
         }

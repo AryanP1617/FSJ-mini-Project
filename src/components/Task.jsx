@@ -11,10 +11,21 @@ function Task (){
 
     const handleSubmit=()=>{
         if(newTask.trim()!==""){
-            setTasks([...tasks,newTask])
+            setTasks([...tasks,{text:newTask,done:false}])
             setNewTask("")
         }
         setIsPopupOpen(false);
+    }
+
+    const toggleTask=(index)=>{         
+        const updatedTasks=tasks.map((task,i)=>
+            i===index?{...task,done:!task.done}:task)
+
+        setTasks(updatedTasks)
+    }
+
+    const handleDelete=()=>{
+        setTasks(tasks.filter((task)=>!task.done))
     }
 
     return (
@@ -26,16 +37,20 @@ function Task (){
                         (tasks.length===0)?(
                             <div className="no-tasks">No tasks currently</div>                            
                         ):(
-                            <ul>
+                            <ul className="overall-task">
                             {tasks.map((task,index)=>(
-                                <li key={index}>{task}</li>
+                                <li key={index} className="task-item">
+                                    <span className="task-text">{task.text}</span>
+                                    <input className="task-checkbox" type="checkbox" checked={task.done} onChange={()=>toggleTask(index)} />                                
+                                
+                                </li>
                             ))}
                             </ul>                            
                         )}
                 </div>
                 <div className="buttons">
                     <button className="add" onClick={()=>setIsPopupOpen(true)}>Add</button>
-                    <button className="delete">Delete</button>                    
+                    <button className="delete" onClick={handleDelete}>Delete</button>                    
                 </div>
             </div>
 
