@@ -19,7 +19,7 @@ function UserCard() {
 
     const handleLogout = () => {
         logout();
-        navigate('/login');
+        navigate('/');
     };
 
     return (

@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from '../context/UserContext';
+
 import './Signup.css'
 
 function Signup(){
-    const navigate = useNavigate()
+    const navigate=useNavigate()
     const { updateUser } = useUser()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
+    const handleSubmit=(e)=>{
+        e.preventDefault();
         const fname = document.getElementById("fname").value.trim()
         const lname = document.getElementById("lname").value.trim()
         const email = document.getElementById("email").value.trim()
@@ -18,11 +19,20 @@ function Signup(){
         const division = document.getElementById("division").value.trim()
         const rollnumber = document.getElementById("rollnumber").value.trim()
 
-        if(!fname || !lname || !email || !password || !branch || !division || !rollnumber) {
-            alert("Please fill all required fields!");
-            return;
-        }
+        const form = e.target;  
 
+        if (!form.checkValidity()) {
+        
+        const firstInvalid = form.querySelector(":invalid");
+        
+        if (firstInvalid) {
+            firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+            firstInvalid.focus();
+        }
+        return;
+     } 
+
+    
         const userKey = `user_${email}`;
         const existingUser = localStorage.getItem(userKey);
         
@@ -43,18 +53,23 @@ function Signup(){
 
         localStorage.setItem(userKey, JSON.stringify(userData));
 
-        updateUser(userData);
-        navigate("/home")
+        updateUser(userData);    
+        navigate('/home');
     }
+
     
     return(
         <>
         <div className="signup-container">
             <div className="signup-wrapper">
-                <div className="image-area"></div>
+                <div className="image-area">
+                    <img className="signup-image" src="/study-late-night-isolated-cartoo.jpg" alt="study-image" />
+                </div>
                 <div className="signup-area">
                     <h1 className="sign">Welcome to Study Sync</h1>
-                    <form onSubmit={handleSubmit}>
+
+                    <div className="signup-form">
+                       <form  onSubmit={handleSubmit}>
                         <div className="input">
                             <label className="input-title" htmlFor="fname">First Name:</label>
                             <input type="text" id="fname" placeholder="Enter first name" required/>
@@ -84,8 +99,10 @@ function Signup(){
                             <input type="text" id="rollnumber" placeholder="Enter roll number" required/>
                         </div>  
                     
-                        <button className="button" type="submit">Sign up</button>
-                    </form>
+                        <button className="sign-up"  type="submit">Sign up</button>
+
+                       </form>
+                    </div>
                 </div>
             </div>
         </div>
