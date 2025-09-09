@@ -90,7 +90,7 @@ ul {
     height: 44px;
     width: 72px;
     background-color: #4A90E2;
-    background-image: url("public/icons8-add-30.svg");
+    background-image: url("/icons8-add-30.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40%;
@@ -103,7 +103,7 @@ ul {
     color:white;
     height: 44px;
     width: 72px;
-    background-image: url("public/icons8-delete.svg");
+    background-image: url("/icons8-delete.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40%;
