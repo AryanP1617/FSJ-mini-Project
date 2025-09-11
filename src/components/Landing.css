@@ -250,12 +250,12 @@
 
     .content-container {
         grid-template-columns: 1fr; 
-        text-align: center; 
+        /* text-align: center;  */
     }
 
 }
 
-@media(max-width:350px)
+@media(max-width:385px)
 {
     .nav-buttons{
         display: flex;

@@ -140,3 +140,18 @@ ul {
 .task-input {
     width: 350px;
 }
+
+@media(max-width:840px)
+{
+    .currwrapper{
+    width: 80%;   
+    height: auto;
+    min-height: 400px;    
+    }
+
+    .task-screen{
+        min-height: 200px; 
+        width: 80%;
+        height: auto;
+    }
+}
