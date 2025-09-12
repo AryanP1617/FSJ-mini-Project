@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from '../context/UserContext';
+import { useState } from "react";
 
 import './Signup.css'
 
@@ -8,6 +9,7 @@ function Signup(){
     const navigate=useNavigate()
     const { updateUser } = useUser()
 
+        const [step, setStep] = useState(1);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -61,51 +63,137 @@ function Signup(){
     return(
         <>
         <div className="signup-container">
-            <div className="signup-wrapper">
-                <div className="image-area">
-                    <img className="signup-image" src="/study-late-night-isolated-cartoo.jpg" alt="study-image" />
-                </div>
-                <div className="signup-area">
-                    <h1 className="sign">Welcome to Study Sync</h1>
-
-                    <div className="signup-form">
-                       <form  onSubmit={handleSubmit}>
-                        <div className="input">
-                            <label className="input-title" htmlFor="fname">First Name:</label>
-                            <input type="text" id="fname" placeholder="Enter first name" required/>
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="lname">Last Name:</label>
-                            <input type="text" id="lname" placeholder="Enter last name" required />
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="email">Email:</label>
-                            <input type="email" id="email" placeholder="Enter email" required />
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="password">Password:</label>
-                            <input type="password" id="password" placeholder="Enter password" required/>
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="branch">Branch</label>
-                            <input type="text" id="branch" placeholder="Enter branch" required />
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="division">Division</label>
-                            <input type="text" id="division" placeholder="Enter division" required/>
-                        </div>
-                        <div className="input">
-                            <label className="input-title" htmlFor="rollnumber">Roll number: </label>
-                            <input type="text" id="rollnumber" placeholder="Enter roll number" required/>
-                        </div>  
-                    
-                        <button className="sign-up"  type="submit">Sign up</button>
-
-                       </form>
-                    </div>
-                </div>
-            </div>
+      <div className="signup-wrapper">
+        <div className="image-area">
+          <img
+            className="signup-image"
+            src="/study-late-night-isolated-cartoo.jpg"
+            alt="study"
+          />
         </div>
+        <div className="signup-area">
+          <h1 className="sign">Welcome to Study Sync</h1>
+
+          <div className="signup-form">
+            <form onSubmit={handleSubmit}>
+              {step === 1 && (
+                <>
+                <div className="form-1">
+                  <div className="input">
+                    <label className="input-title" htmlFor="fname">
+                      First Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="fname"
+                      placeholder="Enter first name"
+                      required
+                    />
+                  </div>
+                  <div className="input">
+                    <label className="input-title" htmlFor="lname">
+                      Last Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="lname"
+                      placeholder="Enter last name"
+                      required
+                    />
+                  </div>
+                  <div className="input">
+                    <label className="input-title" htmlFor="email">
+                      Email:
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="Enter email"
+                      required
+                    />
+                  </div>
+                  <div className="input">
+                    <label className="input-title" htmlFor="password">
+                      Password:
+                    </label>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Enter password"
+                      required
+                    />
+                  </div>
+
+                  <button
+                    className="next"
+                    type="button"
+                    onClick={() => setStep(2)}
+                  >
+                    Next →
+                  </button>
+                </div>
+                </>
+              )}
+
+              {step === 2 && (
+                <>
+                <div className="form-2">
+                  <div className="input">
+                    <label className="input-title" htmlFor="branch">
+                      Branch
+                    </label>
+                    <input
+                      type="text"
+                      id="branch"
+                      placeholder="Enter branch"
+                      required
+                    />
+                  </div>
+                  <div className="input">
+                    <label className="input-title" htmlFor="division">
+                      Division
+                    </label>
+                    <input
+                      type="text"
+                      id="division"
+                      placeholder="Enter division"
+                      required
+                    />
+                  </div>
+                  <div className="input">
+                    <label className="input-title" htmlFor="rollnumber">
+                      Roll number:
+                    </label>
+                    <input
+                      type="text"
+                      id="rollnumber"
+                      placeholder="Enter roll number"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-buttons">
+                    <button
+                      type="button"
+                      className="back"
+                      onClick={() => setStep(1)}
+                    >
+                      ← Back
+                    </button>
+                    <button className="sign-up" type="submit">
+                      Sign up
+                    </button>
+                  </div>
+                  </div>
+                </>
+              )}
+            </form>
+          </div>
+        </div>
+        </div>
+        </div>
+  
+
         </>
     )
 }
