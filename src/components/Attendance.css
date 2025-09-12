@@ -210,3 +210,11 @@ button{
     background-color: #f8d7da;
     color: #721c24;
 }
+
+@media(max-width:1107px)
+{
+    .main-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+}
