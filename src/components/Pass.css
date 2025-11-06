@@ -17,7 +17,8 @@ body, html {
   min-height: 100vh;
   min-width: 100vw;
   background-color: #c7d2fe;
-  
+  gap: 30px;
+  padding: 20px;
 }
 
 .card {
@@ -32,6 +33,7 @@ body, html {
   margin: 20px;
   text-align: center;
   max-width: 400px;
+  width: 100%;
 }
 
 .title {
@@ -77,6 +79,7 @@ body, html {
   font-size: 18px;
   border-radius: 12px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .login-button button:hover {
@@ -85,5 +88,128 @@ body, html {
 
 .side-image {
   max-width: 400px;
-  gap: 30px;
+  height: auto;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .card {
+    max-width: 90%;
+    margin: 10px;
+    padding: 30px;
+    height: 500px;
+  }
+  
+  .side-image {
+    max-width: 300px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    gap: 0;
+  }
+  
+  .card {
+    max-width: 95%;
+    margin: 5px;
+    padding: 25px;
+    border-radius: 15px;
+  }
+  
+  .side-image {
+    display: none;
+  }
+  
+  .title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .input-box input {
+    font-size: 14px;
+    padding: 6px;
+  }
+  
+  .login-button {
+    margin-top: 30px;
+  }
+  
+  .login-button button {
+    padding: 12px 30px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  #error-message {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 5px;
+  }
+  
+  .card {
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  
+  .input-box {
+    padding: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .input-box input {
+    font-size: 13px;
+    padding: 5px;
+  }
+  
+  .login-button {
+    margin-top: 25px;
+  }
+  
+  .login-button button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}   
+
