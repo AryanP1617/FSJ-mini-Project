@@ -9,53 +9,47 @@ function Signup(){
     const navigate=useNavigate()
     const { updateUser } = useUser()
 
-        const [step, setStep] = useState(1);
+    const [step, setStep] = useState(1);
+
+     const [formData, setFormData] = useState({
+        fname: "",
+        lname: "",
+        email: "",
+        password: "",
+        branch: "",
+        division: "",
+        rollnumber: "",
+      })
+
+          const handleChange = (e) => {
+            const { id, value } = e.target
+            setFormData((prevData) => ({
+            ...prevData,
+            [id]: value,
+            }))
+          }
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const fname = document.getElementById("fname").value.trim()
-        const lname = document.getElementById("lname").value.trim()
-        const email = document.getElementById("email").value.trim()
-        const password = document.getElementById("password").value.trim()
-        const branch = document.getElementById("branch").value.trim()
-        const division = document.getElementById("division").value.trim()
-        const rollnumber = document.getElementById("rollnumber").value.trim()
-
-        const form = e.target;  
-
-        if (!form.checkValidity()) {
-        
-        const firstInvalid = form.querySelector(":invalid");
-        
-        if (firstInvalid) {
-            firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
-            firstInvalid.focus();
+        for (const key in formData) {
+        if (!formData[key].trim()) {
+          alert(`Please fill out the ${key} field.`);
+          return;
         }
-        return;
-     } 
-
-    
-        const userKey = `user_${email}`;
-        const existingUser = localStorage.getItem(userKey);
+      }    
+        
+      const userKey = `user_${formData.email}`;
+      const existingUser = localStorage.getItem(userKey);
         
         if (existingUser) {
             alert("User with this email already exists! Please login instead.");
             return;
         }
 
-        const userData = {
-            fname,
-            lname,
-            email,
-            password,
-            branch,
-            division,
-            rollnumber
-        };
+        
+        localStorage.setItem(userKey, JSON.stringify(formData));
 
-        localStorage.setItem(userKey, JSON.stringify(userData));
-
-        updateUser(userData);    
+        updateUser(formData);    
         navigate('/home');
     }
 
@@ -86,6 +80,8 @@ function Signup(){
                     <input
                       type="text"
                       id="fname"
+                      value={formData.fname}
+                      onChange={handleChange}
                       placeholder="Enter first name"
                       required
                     />
@@ -97,6 +93,8 @@ function Signup(){
                     <input
                       type="text"
                       id="lname"
+                      value={formData.lname}
+                      onChange={handleChange}
                       placeholder="Enter last name"
                       required
                     />
@@ -108,6 +106,8 @@ function Signup(){
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Enter email"
                       required
                     />
@@ -119,6 +119,8 @@ function Signup(){
                     <input
                       type="password"
                       id="password"
+                      value={formData.password}
+                      onChange={handleChange}
                       placeholder="Enter password"
                       required
                     />
@@ -145,6 +147,8 @@ function Signup(){
                     <input
                       type="text"
                       id="branch"
+                      value={formData.branch}
+                      onChange={handleChange}
                       placeholder="Enter branch"
                       required
                     />
@@ -156,6 +160,8 @@ function Signup(){
                     <input
                       type="text"
                       id="division"
+                      value={formData.division}
+                      onChange={handleChange}
                       placeholder="Enter division"
                       required
                     />
@@ -167,6 +173,8 @@ function Signup(){
                     <input
                       type="text"
                       id="rollnumber"
+                      value={formData.rollnumber}
+                      onChange={handleChange}
                       placeholder="Enter roll number"
                       required
                     />
